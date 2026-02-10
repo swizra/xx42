@@ -385,12 +385,20 @@ header {
   width: fit-content;
 }
 
-body:has(.mobile-nav.active) main,
-body:has(.mobile-nav.active) section:not(.mobile-nav),
-body:has(.mobile-nav.active) footer,
-body:has(.mobile-nav.active) .hero,
-body:has(.mobile-nav.active) .desktop-nav,
-body:has(.mobile-nav.active) .header-btn {
+body.mobile-nav-opening main,
+body.mobile-nav-opening section:not(.mobile-nav),
+body.mobile-nav-opening footer,
+body.mobile-nav-opening .hero,
+body.mobile-nav-opening .desktop-nav,
+body.mobile-nav-opening .header-btn {
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: none !important;
+}
+body.mobile-nav-opening .btn-primary,
+body.mobile-nav-opening .btn-secondary,
+body.mobile-nav-opening .hero-cta,
+body.mobile-nav-opening .hero-cta * {
   visibility: hidden !important;
   pointer-events: none !important;
   transition: none !important;

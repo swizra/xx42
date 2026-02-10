@@ -10,12 +10,14 @@
     scrollPosition = window.scrollY;
     body.style.top = `-${scrollPosition}px`;
     body.classList.add("no-scroll");
+    body.classList.add("mobile-nav-opening");
     burger.classList.add("active");
     mobileNav.classList.add("active");
   }
 
   function closeMenu() {
     body.classList.remove("no-scroll");
+    body.classList.remove("mobile-nav-opening");
     body.style.top = "";
     window.scrollTo(0, scrollPosition);
     burger.classList.remove("active");
