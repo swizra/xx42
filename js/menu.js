@@ -40,4 +40,11 @@
       closeMenu();
     }
   });
+
+  // Close mobile nav when screen resizes
+  window.addEventListener("resize", () => {
+    if (mobileNav.classList.contains("active")) {
+      closeMenu();
+    }
+  });
 })();
