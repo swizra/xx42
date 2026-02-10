@@ -384,15 +384,16 @@ header {
   line-height: 1;
   width: fit-content;
 }
-/* Hide all content except mobile nav when menu is open */
+
 body:has(.mobile-nav.active) main,
 body:has(.mobile-nav.active) section:not(.mobile-nav),
 body:has(.mobile-nav.active) footer,
 body:has(.mobile-nav.active) .hero,
 body:has(.mobile-nav.active) .desktop-nav,
 body:has(.mobile-nav.active) .header-btn {
-  visibility: hidden;
-  pointer-events: none;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: none !important;
 }
 .hero {
   padding: clamp(80px, 15vh, 200px) var(--content-padding);
