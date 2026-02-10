@@ -1,0 +1,591 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+    <title data-i18n="pageTitles.terms">Terms & Conditions - KEFE STUDIO</title>
+    <meta
+      name="description"
+      content="Terms and Conditions for KEFE strategic design and consulting services"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link rel="canonical" href="https://kefe.ch/terms.html" />
+
+    <meta property="og:title" content="Terms & Conditions - KEFE" />
+    <meta
+      property="og:description"
+      content="Terms and Conditions for KEFE services"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://kefe.ch/terms.html" />
+    <meta property="og:image" content="https://kefe.ch/images/og-image.svg" />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Terms & Conditions - KEFE" />
+    <meta
+      name="twitter:description"
+      content="Terms and Conditions for KEFE services"
+    />
+    <meta name="twitter:creator" content="@swizra" />
+    <meta name="robots" content="index, follow" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0a0a0a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="icon" href="/images/favicons/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      sizes="16x16"
+      href="/images/favicons/favicon-16.svg"
+      type="image/svg+xml"
+    />
+    <link
+      rel="icon"
+      sizes="32x32"
+      href="/images/favicons/favicon-32.svg"
+      type="image/svg+xml"
+    />
+    <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/legal.css" />
+    <script>
+      // Apply theme immediately to prevent flicker on page load
+      (() => {
+        const theme = localStorage.getItem("theme") || "auto";
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        const systemPrefersDark = () => mediaQuery.matches;
+
+        document.documentElement.classList.add(
+          theme === "auto"
+            ? systemPrefersDark()
+              ? "dark-mode"
+              : "light-mode"
+            : theme,
+        );
+      })();
+    </script>
+    <script>
+      // Pre-load i18n to prevent English text flicker
+      (() => {
+        async function getDetectedLanguage() {
+          const browserLang = navigator.language || navigator.userLanguage;
+          const lang = browserLang.split("-")[0];
+          const supported = [
+            "en",
+            "de",
+            "fr",
+            "it",
+            "es",
+            "pt",
+            "ja",
+            "ru",
+            "uk",
+            "zh",
+            "hi",
+          ];
+          return supported.includes(lang) ? lang : "en";
+        }
+
+        async function loadTranslations(lang) {
+          try {
+            const response = await fetch(`./lang/${lang}.json`);
+            if (!response.ok) throw new Error();
+            return await response.json();
+          } catch {
+            return null;
+          }
+        }
+
+        function getNestedValue(obj, path) {
+          return path.split(".").reduce((o, p) => o?.[p], obj);
+        }
+
+        async function applyLanguage() {
+          const currentLanguage =
+            localStorage.getItem("selectedLanguage") ||
+            (await getDetectedLanguage());
+          const translations = await loadTranslations(currentLanguage);
+
+          if (!translations) {
+            document.documentElement.classList.add("i18n-ready");
+            return;
+          }
+
+          document.querySelectorAll("[data-i18n]").forEach((el) => {
+            const key = el.getAttribute("data-i18n");
+            const value = getNestedValue(translations, key);
+            if (value === null || value === undefined) return;
+            if (el.getAttribute("data-i18n-html") === "true") {
+              el.innerHTML = value;
+            } else {
+              el.textContent = value;
+            }
+          });
+
+          document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+            const key = el.getAttribute("data-i18n-placeholder");
+            const value = getNestedValue(translations, key);
+            if (value) el.placeholder = value;
+          });
+
+          document.documentElement.classList.add("i18n-ready");
+        }
+
+        applyLanguage();
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">KEFE</a>
+      <nav class="desktop-nav">
+        <a href="/#strategy" class="desktop-nav-link" data-i18n="strategy.title"
+          >Strategy</a
+        >
+        <a href="/#design" class="desktop-nav-link" data-i18n="design.title"
+          >Design</a
+        >
+        <a href="/#scaling" class="desktop-nav-link" data-i18n="scaling.title"
+          >Scaling</a
+        >
+        <a
+          href="/#consulting"
+          class="desktop-nav-link"
+          data-i18n="consulting.title"
+          >Consulting</a
+        >
+        <a href="/#process" class="desktop-nav-link" data-i18n="process.title"
+          >Our Process</a
+        >
+        <a href="/#services" class="desktop-nav-link" data-i18n="services.title"
+          >Services</a
+        >
+      </nav>
+      <div class="header-right">
+        <a
+          href="/#consultation"
+          class="header-btn desktop-btn"
+          data-i18n="header.getStarted"
+          >Get Started</a
+        >
+
+        <div class="burger-menu" id="burger-menu">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav">
+        <a href="/#strategy" class="mobile-link" data-i18n="strategy.title"
+          >Strategy</a
+        >
+        <a href="/#design" class="mobile-link" data-i18n="design.title"
+          >Design</a
+        >
+        <a href="/#scaling" class="mobile-link" data-i18n="scaling.title"
+          >Scaling</a
+        >
+        <a href="/#consulting" class="mobile-link" data-i18n="consulting.title"
+          >Consulting</a
+        >
+        <a href="/#process" class="mobile-link" data-i18n="process.title"
+          >Our Process</a
+        >
+        <a href="/#services" class="mobile-link" data-i18n="services.title"
+          >Services</a
+        >
+        <a
+          href="/#consultation"
+          class="mobile-cta"
+          data-i18n="header.getStarted"
+          >Get Started</a
+        >
+      </nav>
+    </header>
+
+    <main class="legal-page">
+      <div class="legal-content">
+        <h1 data-i18n="modals.terms.title">Terms & Conditions</h1>
+        <p class="updated" data-i18n="modals.terms.subtitle">
+          Last updated: 10.02.2026
+        </p>
+
+        <h2 data-i18n="modals.terms.section1Title">1. General Information</h2>
+        <p data-i18n="modals.terms.section1Text"></p>
+
+        <h2 data-i18n="modals.terms.section2Title">2. Services</h2>
+        <p data-i18n="modals.terms.section2Text"></p>
+        <ul>
+          <li data-i18n="modals.terms.service1"></li>
+          <li data-i18n="modals.terms.service2"></li>
+          <li data-i18n="modals.terms.service3"></li>
+          <li data-i18n="modals.terms.service4"></li>
+          <li data-i18n="modals.terms.service5"></li>
+        </ul>
+
+        <h2 data-i18n="modals.terms.section3Title">3. Scope of Services</h2>
+        <p data-i18n="modals.terms.section3Text"></p>
+
+        <h2 data-i18n="modals.terms.section4Title">4. Client Obligations</h2>
+        <p data-i18n="modals.terms.section4Text"></p>
+        <ul>
+          <li data-i18n="modals.terms.obligation1"></li>
+          <li data-i18n="modals.terms.obligation2"></li>
+          <li data-i18n="modals.terms.obligation3"></li>
+          <li data-i18n="modals.terms.obligation4"></li>
+        </ul>
+
+        <h2 data-i18n="modals.terms.section5Title">5. Payment Terms</h2>
+        <p data-i18n="modals.terms.section5Text"></p>
+        <ul>
+          <li data-i18n="modals.terms.payment1"></li>
+          <li data-i18n="modals.terms.payment2"></li>
+          <li data-i18n="modals.terms.payment3"></li>
+        </ul>
+
+        <h3 data-i18n="modals.terms.section5aTitle">
+          5.1 Consultation Payments
+        </h3>
+        <p data-i18n="modals.terms.section5aText"></p>
+        <ul>
+          <li data-i18n="modals.terms.consultationPayment1"></li>
+          <li data-i18n="modals.terms.consultationPayment2"></li>
+          <li data-i18n="modals.terms.consultationPayment3"></li>
+          <li data-i18n="modals.terms.consultationPayment4"></li>
+        </ul>
+
+        <h3 data-i18n="modals.terms.section5bTitle">
+          5.2 Payment Processing via Stripe
+        </h3>
+        <p data-i18n="modals.terms.section5bText"></p>
+        <ul>
+          <li data-i18n="modals.terms.stripePayment1"></li>
+          <li data-i18n="modals.terms.stripePayment2"></li>
+          <li data-i18n="modals.terms.stripePayment3"></li>
+          <li data-i18n="modals.terms.stripePayment4"></li>
+          <li
+            data-i18n="modals.terms.stripePayment5"
+            data-i18n-html="true"
+          ></li>
+          <li data-i18n="modals.terms.stripePayment6"></li>
+        </ul>
+
+        <h2 data-i18n="modals.terms.section6Title">6. Intellectual Property</h2>
+        <p>
+          <strong data-i18n="modals.terms.clientOwnership"></strong>
+          <span data-i18n="modals.terms.section6Ownership"></span>
+        </p>
+        <p>
+          <strong data-i18n="modals.terms.KEFEOwnership"></strong>
+          <span data-i18n="modals.terms.section6KEFEOwnership"></span>
+        </p>
+
+        <h2 data-i18n="modals.terms.section7Title">7. Confidentiality</h2>
+        <p data-i18n="modals.terms.section7Text"></p>
+
+        <h2 data-i18n="modals.terms.section8Title">
+          8. Website and Communication
+        </h2>
+        <p data-i18n="modals.terms.section8Text"></p>
+        <ul>
+          <li data-i18n="modals.terms.prohibited1"></li>
+          <li data-i18n="modals.terms.prohibited2"></li>
+          <li data-i18n="modals.terms.prohibited3"></li>
+          <li data-i18n="modals.terms.prohibited4"></li>
+        </ul>
+
+        <h2 data-i18n="modals.terms.section9Title">9. No Data Collection</h2>
+        <p data-i18n="modals.terms.section9Text"></p>
+
+        <h2 data-i18n="modals.terms.section10Title">
+          10. Copyright and Content
+        </h2>
+        <p data-i18n="modals.terms.section10Text"></p>
+        <p><strong data-i18n="modals.terms.thirdPartyResources"></strong></p>
+        <ul>
+          <li data-i18n="modals.terms.resource1"></li>
+          <li data-i18n="modals.terms.resource2"></li>
+          <li data-i18n="modals.terms.resource3"></li>
+        </ul>
+
+        <h2 data-i18n="modals.terms.section11Title">
+          11. Limitation of Liability
+        </h2>
+        <p data-i18n="modals.terms.section11Text"></p>
+
+        <h2 data-i18n="modals.terms.section12Title">12. Governing Law</h2>
+        <p data-i18n="modals.terms.section12Text"></p>
+
+        <h2 data-i18n="modals.terms.section13Title">13. Contact Information</h2>
+        <p>
+          <strong>Volodymyr Shalavylo</strong><br />
+          Ziegelweg 1<br />
+          4102 Binningen<br />
+          <span data-i18n="modals.terms.contactRegion"
+            >Basel-Landschaft, Switzerland</span
+          ><br />
+          <br />
+          <span data-i18n="modals.terms.contactPhone">Phone:</span>
+          <a href="tel:+41783514822">+41 78 351 48 22</a><br />
+          <span data-i18n="modals.terms.contactEmail">Email:</span>
+          <a href="mailto:info@kefe.ch">info@kefe.ch</a>
+        </p>
+
+        <div class="download-options">
+          <span data-i18n="footer.download">Download:</span>
+          <button onclick="downloadTerms('txt')" class="download-btn">
+            <span class="material-icons">text_snippet</span>TXT
+          </button>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span data-i18n="footer.headquarters">Headquarters</span>
+            <span class="material-icons accordion-icon"
+              >keyboard_arrow_down</span
+            >
+          </button>
+          <div class="accordion-content">
+            <p>4102 Binningen</p>
+            <p>Switzerland</p>
+            <div class="download-links" style="margin-top: 8px">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Ziegelweg+1+4102+Binningen+Switzerland"
+                target="_blank"
+                rel="noopener"
+                title="Open in Google Maps"
+                class="download-link-btn"
+                >Google Maps</a
+              >
+              <a
+                href="https://maps.apple.com/?q=Ziegelweg+1+4102+Binningen+Switzerland"
+                target="_blank"
+                rel="noopener"
+                title="Open in Apple Maps"
+                class="download-link-btn"
+                >Apple Maps</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span data-i18n="footer.contact">Contact</span>
+            <span class="material-icons accordion-icon"
+              >keyboard_arrow_down</span
+            >
+          </button>
+          <div class="accordion-content">
+            <p>
+              <a href="mailto:info@kefe.ch" class="contact-email"
+                >info@kefe.ch</a
+              >
+            </p>
+            <p id="phone-number">
+              <a href="tel:+41783514822">+41 78 351 48 22</a>
+            </p>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span data-i18n="footer.social">Social Media</span>
+            <span class="material-icons accordion-icon"
+              >keyboard_arrow_down</span
+            >
+          </button>
+          <div class="accordion-content">
+            <a href="https://wa.me/41783514822">WhatsApp</a>
+            <a href="https://t.me/kefestudio">Telegram</a>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span data-i18n="footer.legal">Legal</span>
+            <span class="material-icons accordion-icon"
+              >keyboard_arrow_down</span
+            >
+          </button>
+          <div class="accordion-content">
+            <div class="legal-item">
+              <a href="/terms.html" data-i18n="footer.terms"
+                >Terms & Conditions</a
+              >
+            </div>
+            <div class="legal-item">
+              <a href="/imprint.html" data-i18n="footer.imprint">Imprint</a>
+            </div>
+            <div class="legal-item">
+              <a href="/privacy.html" data-i18n="footer.privacy"
+                >Privacy Policy</a
+              >
+            </div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span data-i18n="footer.language">Language</span>
+            <span class="material-icons accordion-icon"
+              >keyboard_arrow_down</span
+            >
+          </button>
+          <div class="accordion-content">
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="en"
+              onclick="event.preventDefault()"
+              >English <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="de"
+              onclick="event.preventDefault()"
+              >Deutsch <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="fr"
+              onclick="event.preventDefault()"
+              >Français <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="it"
+              onclick="event.preventDefault()"
+              >Italiano <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="es"
+              onclick="event.preventDefault()"
+              >Español <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="pt"
+              onclick="event.preventDefault()"
+              >Português <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="ja"
+              onclick="event.preventDefault()"
+              >日本語 <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="ru"
+              onclick="event.preventDefault()"
+              >Русский <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="uk"
+              onclick="event.preventDefault()"
+              >Українська <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="zh"
+              onclick="event.preventDefault()"
+              >中文 <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="hi"
+              onclick="event.preventDefault()"
+              >हिन्दी <span class="lang-checkmark">✓</span></a
+            >
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span data-i18n="footer.theme">Theme</span>
+            <span class="material-icons accordion-icon"
+              >keyboard_arrow_down</span
+            >
+          </button>
+          <div class="accordion-content">
+            <a
+              href="#"
+              class="theme-option"
+              data-theme="auto"
+              onclick="event.preventDefault()"
+            >
+              <span data-i18n="footer.themeAuto">Auto</span>
+              <span class="theme-checkmark">✓</span>
+            </a>
+            <a
+              href="#"
+              class="theme-option"
+              data-theme="light"
+              onclick="event.preventDefault()"
+            >
+              <span data-i18n="footer.themeLight">Light</span>
+              <span class="theme-checkmark">✓</span>
+            </a>
+            <a
+              href="#"
+              class="theme-option"
+              data-theme="dark"
+              onclick="event.preventDefault()"
+            >
+              <span data-i18n="footer.themeDark">Dark</span>
+              <span class="theme-checkmark">✓</span>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-big-elements">
+        <div class="footer-logo-giant">KEFE</div>
+        <div class="legal-bar-giant">©<span id="year"></span></div>
+      </div>
+    </footer>
+
+    <div class="theme-fade" id="theme-fade"></div>
+    <script src="js/scroll-memory.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/accordion.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/consultation.js"></script>
+    <script src="js/downloads.js"></script>
+    <script src="js/i18n.js"></script>
+  </body>
+</html>

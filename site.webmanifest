@@ -1,0 +1,19 @@
+{
+  "name": "KEFE",
+  "short_name": "KEFE",
+  "icons": [
+    {
+      "src": "/images/favicons/android-chrome-192.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/images/favicons/android-chrome-512.svg",
+      "sizes": "512x512",
+      "type": "image/svg+xml"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone"
+}

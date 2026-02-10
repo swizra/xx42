@@ -1,0 +1,36 @@
+/* HUMANS.TXT */
+/* humanstxt.org */
+
+/* TEAM */
+  Name: Volodymyr Shalavylo
+  Title: Founder & Principal Strategist
+  Email: info@kefe.ch
+  Twitter: @swizra
+  Location: Binningen, Switzerland
+
+/* SITE */
+  Name: KEFE Studio
+  Description: Strategic Design & Consulting
+  URL: https://kefe.ch
+  Language: English, German, French, Italian, Spanish, Portuguese, Russian, Ukrainian, Japanese, Chinese, Hindi
+  Standards: HTML5, CSS3, JavaScript (ES6+)
+  Components: Responsive Design, Internationalization (i18n), Modal System
+  
+/* TECHNOLOGY */
+  Standards: HTML5, CSS3, JavaScript
+  Architecture: Client-side rendered, Static hosting
+  Multilingual: Yes (11 languages supported)
+  Accessibility: WCAG 2.1 compliant
+  
+/* BUILD INFO */
+  Last Update: 2026-02-09
+  Repository: https://github.com/swizra/KEFE
+  
+/* CONTACT */
+  Email: info@kefe.ch
+  Phone: +41 78 351 48 22
+  Location: Binningen, Switzerland
+  Website: https://kefe.ch
+
+/* THANKS */
+  Thanks to all clients, collaborators, and the open-source community

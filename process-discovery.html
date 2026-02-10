@@ -1,0 +1,436 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title data-i18n="pageTitles.processDiscovery">Discovery - KEFE</title>
+    <meta name="theme-color" content="#ffffff" />
+    <link rel="icon" href="/images/favicons/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      sizes="16x16"
+      href="/images/favicons/favicon-16.svg"
+      type="image/svg+xml"
+    />
+    <link
+      rel="icon"
+      sizes="32x32"
+      href="/images/favicons/favicon-32.svg"
+      type="image/svg+xml"
+    />
+    <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.svg" />
+    <link rel="manifest" href="/site.webmanifest" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel="stylesheet" href="css/legal.css" />
+    <script>
+      // Apply theme immediately to prevent flicker on page load
+      (() => {
+        const theme = localStorage.getItem("theme") || "auto";
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        const systemPrefersDark = () => mediaQuery.matches;
+
+        document.documentElement.classList.add(
+          theme === "auto"
+            ? systemPrefersDark()
+              ? "dark-mode"
+              : "light-mode"
+            : theme,
+        );
+      })();
+    </script>
+  </head>
+  <body>
+    <header>
+      <a href="/" class="logo">KEFE</a>
+      <nav class="desktop-nav">
+        <a
+          href="/grid-strategy.html"
+          class="desktop-nav-link"
+          data-i18n="strategy.title"
+          >Strategy</a
+        >
+        <a
+          href="/grid-design.html"
+          class="desktop-nav-link"
+          data-i18n="design.title"
+          >Design</a
+        >
+        <a
+          href="/grid-scaling.html"
+          class="desktop-nav-link"
+          data-i18n="scaling.title"
+          >Scaling</a
+        >
+        <a
+          href="/grid-consulting.html"
+          class="desktop-nav-link"
+          data-i18n="consulting.title"
+          >Consulting</a
+        >
+        <a href="/#process" class="desktop-nav-link" data-i18n="process.title"
+          >Our Process</a
+        >
+        <a href="/#services" class="desktop-nav-link" data-i18n="services.title"
+          >Services</a
+        >
+      </nav>
+      <div class="header-right">
+        <a
+          href="/#consultation"
+          class="header-btn desktop-btn"
+          data-i18n="header.getStarted"
+          >Get Started</a
+        >
+        <div class="burger-menu" id="burger-menu">
+          <span></span><span></span>
+        </div>
+      </div>
+      <nav class="mobile-nav" id="mobile-nav">
+        <a
+          href="/grid-strategy.html"
+          class="mobile-link"
+          data-i18n="strategy.title"
+          >Strategy</a
+        >
+        <a href="/grid-design.html" class="mobile-link" data-i18n="design.title"
+          >Design</a
+        >
+        <a
+          href="/grid-scaling.html"
+          class="mobile-link"
+          data-i18n="scaling.title"
+          >Scaling</a
+        >
+        <a
+          href="/grid-consulting.html"
+          class="mobile-link"
+          data-i18n="consulting.title"
+          >Consulting</a
+        >
+        <a href="/#process" class="mobile-link" data-i18n="process.title"
+          >Our Process</a
+        >
+        <a href="/#services" class="mobile-link" data-i18n="services.title"
+          >Services</a
+        >
+        <a
+          href="/#consultation"
+          class="mobile-cta"
+          data-i18n="header.getStarted"
+          >Get Started</a
+        >
+      </nav>
+    </header>
+
+    <main class="legal-page">
+      <div class="legal-content">
+        <h1 data-i18n="modals.processDiscovery.title">Discovery</h1>
+        <p class="modal-subtitle" data-i18n="modals.processDiscovery.subtitle">
+          Understanding your business, market, and opportunities
+        </p>
+
+        <h2 data-i18n="modals.processDiscovery.overviewHeader">Overview</h2>
+        <p data-i18n="modals.processDiscovery.overview">
+          Every successful project begins with deep understanding. In the
+          discovery phase, we conduct in-depth analysis of your business, market
+          positioning, competitive landscape, and growth objectives to establish
+          a solid foundation for strategic work.
+        </p>
+
+        <h2 data-i18n="modals.processDiscovery.whatWeDo">What We Analyze</h2>
+        <p data-i18n="modals.processDiscovery.whatWeDoDescription">
+          During discovery, we examine:
+        </p>
+        <ul>
+          <li>
+            <strong data-i18n="modals.processDiscovery.businessAnalysis"
+              >Business Analysis:</strong
+            >
+            <span data-i18n="modals.processDiscovery.businessAnalysisDesc"
+              >Deep dive into your business model, operations, and
+              capabilities</span
+            >
+          </li>
+          <li>
+            <strong data-i18n="modals.processDiscovery.marketPositioning"
+              >Market Positioning:</strong
+            >
+            <span data-i18n="modals.processDiscovery.marketPositioningDesc"
+              >Assessment of where you stand in your market</span
+            >
+          </li>
+          <li>
+            <strong data-i18n="modals.processDiscovery.competitiveLandscape"
+              >Competitive Landscape:</strong
+            >
+            <span data-i18n="modals.processDiscovery.competitiveLandscapeDesc"
+              >Detailed competitive analysis and benchmarking</span
+            >
+          </li>
+          <li>
+            <strong data-i18n="modals.processDiscovery.growthObjectives"
+              >Growth Objectives:</strong
+            >
+            <span data-i18n="modals.processDiscovery.growthObjectivesDesc"
+              >Clarification of business goals and growth targets</span
+            >
+          </li>
+          <li>
+            <strong
+              data-i18n="modals.processDiscovery.opportunityIdentification"
+              >Opportunity Identification:</strong
+            >
+            <span
+              data-i18n="modals.processDiscovery.opportunityIdentificationDesc"
+              >Discovery of market gaps and expansion opportunities</span
+            >
+          </li>
+        </ul>
+
+        <h2 data-i18n="modals.processDiscovery.discoveryProcess">
+          The Discovery Process
+        </h2>
+        <p data-i18n="modals.processDiscovery.processDescription">
+          We use a combination of interviews, research, data analysis, and
+          competitive assessment to build comprehensive understanding. This
+          phase typically involves extensive stakeholder engagement to ensure we
+          capture all relevant insights and perspectives.
+        </p>
+
+        <h2 data-i18n="modals.processDiscovery.expectedOutcomes">
+          Expected Outcomes
+        </h2>
+        <p data-i18n="modals.processDiscovery.outcomesDescription">
+          A comprehensive understanding of your business context, market
+          dynamics, and opportunities. Discovery findings inform all subsequent
+          strategic and creative work.
+        </p>
+      </div>
+    </main>
+
+    <footer>
+      <div class="footer-accordion">
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span data-i18n="footer.headquarters">Headquarters</span
+            ><span class="material-icons accordion-icon"
+              >keyboard_arrow_down</span
+            >
+          </button>
+          <div class="accordion-content">
+            <p>4102 Binningen</p>
+            <p>Switzerland</p>
+            <div class="download-links" style="margin-top: 8px">
+              <a
+                href="https://www.google.com/maps/search/?api=1&query=Ziegelweg+1+4102+Binningen+Switzerland"
+                target="_blank"
+                rel="noopener"
+                class="download-link-btn"
+                >Google Maps</a
+              >
+              <a
+                href="https://maps.apple.com/?q=Ziegelweg+1+4102+Binningen+Switzerland"
+                target="_blank"
+                rel="noopener"
+                class="download-link-btn"
+                >Apple Maps</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span data-i18n="footer.contact">Contact</span
+            ><span class="material-icons accordion-icon"
+              >keyboard_arrow_down</span
+            >
+          </button>
+          <div class="accordion-content">
+            <p>
+              <a href="mailto:info@kefe.ch" class="contact-email"
+                >info@kefe.ch</a
+              >
+            </p>
+            <p id="phone-number">
+              <a href="tel:+41783514822">+41 78 351 48 22</a>
+            </p>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span data-i18n="footer.social">Social Media</span
+            ><span class="material-icons accordion-icon"
+              >keyboard_arrow_down</span
+            >
+          </button>
+          <div class="accordion-content">
+            <a href="https://wa.me/41783514822">WhatsApp</a>
+            <a href="https://t.me/kefestudio">Telegram</a>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span data-i18n="footer.legal">Legal</span
+            ><span class="material-icons accordion-icon"
+              >keyboard_arrow_down</span
+            >
+          </button>
+          <div class="accordion-content">
+            <div class="legal-item">
+              <a href="/terms.html" data-i18n="footer.terms"
+                >Terms & Conditions</a
+              >
+            </div>
+            <div class="legal-item">
+              <a href="/imprint.html" data-i18n="footer.imprint">Imprint</a>
+            </div>
+            <div class="legal-item">
+              <a href="/privacy.html" data-i18n="footer.privacy"
+                >Privacy Policy</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span data-i18n="footer.language">Language</span
+            ><span class="material-icons accordion-icon"
+              >keyboard_arrow_down</span
+            >
+          </button>
+          <div class="accordion-content">
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="en"
+              onclick="event.preventDefault()"
+              >English <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="de"
+              onclick="event.preventDefault()"
+              >Deutsch <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="fr"
+              onclick="event.preventDefault()"
+              >Français <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="it"
+              onclick="event.preventDefault()"
+              >Italiano <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="es"
+              onclick="event.preventDefault()"
+              >Español <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="pt"
+              onclick="event.preventDefault()"
+              >Português <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="ja"
+              onclick="event.preventDefault()"
+              >日本語 <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="ru"
+              onclick="event.preventDefault()"
+              >Русский <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="uk"
+              onclick="event.preventDefault()"
+              >Українська <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="zh"
+              onclick="event.preventDefault()"
+              >中文 <span class="lang-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="lang-option"
+              data-lang="hi"
+              onclick="event.preventDefault()"
+              >हिन्दी <span class="lang-checkmark">✓</span></a
+            >
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            <span data-i18n="footer.theme">Theme</span
+            ><span class="material-icons accordion-icon"
+              >keyboard_arrow_down</span
+            >
+          </button>
+          <div class="accordion-content">
+            <a
+              href="#"
+              class="theme-option"
+              data-theme="auto"
+              onclick="event.preventDefault()"
+              ><span data-i18n="footer.themeAuto">Auto</span
+              ><span class="theme-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="theme-option"
+              data-theme="light"
+              onclick="event.preventDefault()"
+              ><span data-i18n="footer.themeLight">Light</span
+              ><span class="theme-checkmark">✓</span></a
+            >
+            <a
+              href="#"
+              class="theme-option"
+              data-theme="dark"
+              onclick="event.preventDefault()"
+              ><span data-i18n="footer.themeDark">Dark</span
+              ><span class="theme-checkmark">✓</span></a
+            >
+          </div>
+        </div>
+      </div>
+      <div class="footer-big-elements">
+        <div class="footer-logo-giant">KEFE</div>
+        <div class="legal-bar-giant">©<span id="year"></span></div>
+      </div>
+    </footer>
+
+    <div class="theme-fade" id="theme-fade"></div>
+    <script src="js/scroll-memory.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/accordion.js"></script>
+    <script src="js/footer.js"></script>
+    <script src="js/consultation.js"></script>
+    <script src="js/downloads.js"></script>
+    <script src="js/i18n.js"></script>
+  </body>
+</html>

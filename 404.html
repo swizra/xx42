@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="pageTitles.error404">404 - KEFE</title>
+    <meta name="description" content="404 - Page not found" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="theme-color"
+      content="#ffffff"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta
+      name="theme-color"
+      content="#0a0a0a"
+      media="(prefers-color-scheme: dark)"
+    />
+    <link rel="icon" href="/images/favicons/favicon.svg" type="image/svg+xml" />
+    <link
+      rel="icon"
+      sizes="16x16"
+      href="/images/favicons/favicon-16.svg"
+      type="image/svg+xml"
+    />
+    <link
+      rel="icon"
+      sizes="32x32"
+      href="/images/favicons/favicon-32.svg"
+      type="image/svg+xml"
+    />
+    <link rel="apple-touch-icon" href="/images/favicons/apple-touch-icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/404.css" />
+    <script>
+      // Apply theme immediately to prevent flicker on page load
+      (() => {
+        const theme = localStorage.getItem("theme") || "auto";
+        const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+        const systemPrefersDark = () => mediaQuery.matches;
+
+        document.documentElement.classList.add(
+          theme === "auto"
+            ? systemPrefersDark()
+              ? "dark-mode"
+              : "light-mode"
+            : theme,
+        );
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="logo">KEFE</div>
+    <div class="code">404</div>
+
+    <script src="/js/scroll-memory.js"></script>
+    <script src="/js/404-theme.js"></script>
+    <script src="/js/404-i18n.js"></script>
+  </body>
+</html>
