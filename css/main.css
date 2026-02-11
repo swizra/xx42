@@ -366,17 +366,17 @@ header {
   opacity: 0.6;
 }
 .mobile-cta {
-  font-size: 18px;
+  font-size: 32px;
   font-weight: 900;
   text-decoration: none;
-  color: var(--white);
-  background: var(--black);
-  padding: 18px 36px;
-  border-radius: 100px;
-  text-align: center;
-  margin-top: 20px;
-  line-height: 1;
-  width: fit-content;
+  color: var(--black);
+  background: transparent;
+  padding: 12px 0;
+  border-radius: 0;
+  text-align: left;
+  margin-top: 0;
+  line-height: 1.2;
+  width: auto;
   opacity: 0;
   transform: translateY(20px);
   transition:
@@ -389,7 +389,7 @@ header {
   transition-delay: 0.35s;
 }
 .mobile-cta:active {
-  opacity: 0.8;
+  opacity: 0.6;
 }
 .hero {
   padding: clamp(80px, 15vh, 200px) var(--content-padding);
@@ -1073,6 +1073,12 @@ body.light-mode {
   }
   .header-btn {
     display: block;
+  }
+  .mobile-nav:not(.active) {
+    display: none;
+  }
+  .burger-menu {
+    display: none;
   }
 }
 @media (min-width: 769px) and (max-width: 1199px) {
