@@ -4,13 +4,16 @@
   const body = document.body;
   const header = document.querySelector("header");
   let isOpen = false;
+  let scrollPosition = 0;
 
   if (!burger || !mobileNav) return;
 
   function openMenu() {
     isOpen = true;
+    scrollPosition = window.pageYOffset || document.documentElement.scrollTop;
     body.style.overflow = "hidden";
     body.style.position = "fixed";
+    body.style.top = `-${scrollPosition}px`;
     body.style.width = "100%";
     burger.classList.add("active");
     mobileNav.classList.add("active");
@@ -26,7 +29,9 @@
     isOpen = false;
     body.style.overflow = "";
     body.style.position = "";
+    body.style.top = "";
     body.style.width = "";
+    window.scrollTo(0, scrollPosition);
     burger.classList.remove("active");
     mobileNav.classList.remove("active");
 
