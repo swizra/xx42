@@ -316,8 +316,8 @@ header {
   transform: translateY(-100%);
   opacity: 0;
   transition:
-    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.3s ease;
+    transform 0.6s cubic-bezier(0.32, 0.72, 0, 1),
+    opacity 0.4s ease;
   z-index: 200;
   overflow-y: auto;
   overflow-x: hidden;
@@ -335,32 +335,32 @@ header {
   padding: 12px 0;
   line-height: 1.2;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
   transition:
-    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.4s ease;
+    transform 0.6s cubic-bezier(0.32, 0.72, 0, 1),
+    opacity 0.5s ease;
 }
 .mobile-nav.active .mobile-link {
   opacity: 1;
   transform: translateY(0);
 }
 .mobile-nav.active .mobile-link:nth-child(1) {
-  transition-delay: 0.05s;
+  transition-delay: 0.08s;
 }
 .mobile-nav.active .mobile-link:nth-child(2) {
-  transition-delay: 0.1s;
+  transition-delay: 0.12s;
 }
 .mobile-nav.active .mobile-link:nth-child(3) {
-  transition-delay: 0.15s;
+  transition-delay: 0.16s;
 }
 .mobile-nav.active .mobile-link:nth-child(4) {
   transition-delay: 0.2s;
 }
 .mobile-nav.active .mobile-link:nth-child(5) {
-  transition-delay: 0.25s;
+  transition-delay: 0.24s;
 }
 .mobile-nav.active .mobile-link:nth-child(6) {
-  transition-delay: 0.3s;
+  transition-delay: 0.28s;
 }
 .mobile-link:active {
   opacity: 0.6;
@@ -378,15 +378,17 @@ header {
   line-height: 1.2;
   width: auto;
   opacity: 0;
-  transform: translateY(20px);
+  transform: translateY(30px);
   transition:
-    transform 0.5s cubic-bezier(0.16, 1, 0.3, 1),
-    opacity 0.4s ease;
+    transform 0.6s cubic-bezier(0.32, 0.72, 0, 1),
+    opacity 0.5s ease;
 }
 .mobile-nav.active .mobile-cta {
   opacity: 1;
   transform: translateY(0);
-  transition-delay: 0.35s;
+}
+.mobile-nav.active .mobile-cta:nth-child(7) {
+  transition-delay: 0.32s;
 }
 .mobile-cta:active {
   opacity: 0.6;
